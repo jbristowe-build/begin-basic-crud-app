@@ -1,10 +1,27 @@
-// Enable secure sessions, express-style middleware, and more:
-// https://docs.begin.com/en/functions/http/
-//
-// let begin = require('@architect/functions')
+let arc = require('@architect/functions')
+let parseBody = arc.http.helpers.bodyParser
 
 exports.handler = async function http(req) {
-  console.log(req)
+  console.log(request.body)
+  let body = parseBody(request)
+  
+  if (!body.article) {
+    return {
+      status: 422,
+      ''Article must be specified.'
+    }
+  }
+  
+  const articleData = body.article
+  for (const expectedField of ['title', 'description', 'body']) {
+    if (!articleData[expectedField]) {
+      return {
+        status: 422,
+        `${expectedField} must be specified.`
+      }
+    }
+  }
+
   return {
     status: 302,
     location: '/'
