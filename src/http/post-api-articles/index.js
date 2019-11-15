@@ -1,6 +1,6 @@
 let arc = require('@architect/functions')
 
-exports.handler = async function http(req) {
+exports.handler = async function http(request) {
   let body = arc.http.helpers.bodyParser(request)
   
   if (!body.article) {
