@@ -8,7 +8,7 @@ exports.handler = async function http(req) {
   if (!body.article) {
     return {
       status: 422,
-      ''Article must be specified.'
+      'Article must be specified.'
     }
   }
   
