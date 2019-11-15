@@ -7,6 +7,7 @@ shiny-qwf
 get /todos
 post /todos
 post /todos/delete
+get /api/articles
 
 @tables
 data
