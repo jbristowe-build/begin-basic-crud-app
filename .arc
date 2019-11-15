@@ -8,6 +8,7 @@ get /todos
 post /todos
 post /todos/delete
 get /api/articles
+post /api/articles
 
 @tables
 data
