@@ -2,8 +2,8 @@ let arc = require('@architect/functions')
 let parseBody = arc.http.helpers.bodyParser
 
 exports.handler = async function http(req) {
-  console.log(request.body)
-  let body = parseBody(request)
+  console.log(req.body)
+  let body = parseBody(req)
   
   if (!body.article) {
     return {
