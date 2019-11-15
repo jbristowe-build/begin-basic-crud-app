@@ -8,7 +8,7 @@ exports.handler = async function http(req) {
   if (!body.article) {
     return {
       status: 422,
-      'Article must be specified.'
+      body: 'Article must be specified.'
     }
   }
   
@@ -17,7 +17,7 @@ exports.handler = async function http(req) {
     if (!articleData[expectedField]) {
       return {
         status: 422,
-        `${expectedField} must be specified.`
+        body: `${expectedField} must be specified.`
       }
     }
   }
